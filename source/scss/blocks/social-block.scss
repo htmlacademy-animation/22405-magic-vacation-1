@@ -4,8 +4,32 @@
   &:hover {
     .social-block__list {
       opacity: 1;
-      pointer-events: auto;
     }
+  }
+
+
+  &--active {
+    .social-block__toggler {
+      background: #a67ee5;
+      color: #fff;
+      transition: all .3s .1s ease-in-out;
+
+      &::before {
+        background: #a67ee5;
+        border: none;
+        transition: all .2s .1s ease-in-out;
+      }
+
+      svg {
+        transition: all .3s .1s ease-in-out;
+        filter: brightness(0) invert(1);
+      }
+    }
+
+
+    .social-block__link {
+      opacity: 1;
+    } 
   }
 }
 
@@ -35,6 +59,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: all .3s ease-in-out;
   }
 
   svg {
@@ -42,6 +67,7 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+    filter: none;
   }
 
   &:hover,
@@ -52,6 +78,8 @@
       width: 112.5%;
       height: 112.5%;
     }
+
+
   }
 
   &:focus {
@@ -62,10 +90,12 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
+
+
   }
 
   &:active,
@@ -79,6 +109,11 @@
       border-color: $c-purple;
     }
   }
+
+
+
+
+
 }
 
 .social-block__list {
@@ -130,6 +165,8 @@
   &:hover {
     opacity: 1;
     pointer-events: auto;
+
+
   }
 
   &:focus-within {
@@ -140,6 +177,7 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+
   }
 
   li {
@@ -163,11 +201,13 @@
 .social-block__link {
   position: relative;
   display: block;
+  opacity: 0;
   width: 4rem;
   height: 4rem;
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: all .3s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -206,7 +246,11 @@
     @include center;
   }
 
+
   &--fb {
+
+    transition-delay: 0;
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +263,9 @@
   }
 
   &--insta {
+
+    transition-delay: .2s;
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +278,9 @@
   }
 
   &--vk {
+
+    transition-delay: .4s;
+
     svg {
       width: 1.7rem;
       height: 1rem;

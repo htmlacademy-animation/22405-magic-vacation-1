@@ -184,5 +184,29 @@
 }
 
 .chat__footer {
+
   margin-top: auto;
+
+  .form__field,
+  .form__button {
+    opacity: 0;
+    animation: .5s slideInRight ease-in both;
+    animation-delay: .2s;
+  }
+
+  .form__button {
+    animation-delay: .5s;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
