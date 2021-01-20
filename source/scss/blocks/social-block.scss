@@ -4,27 +4,39 @@
   &--active {
     .social-block__toggler {
       background: #a67ee5;
-      // color: #fff;
-      transition: .1s 1s background ease-in;
+      transition: background .2s .7s ease-in;
 
 
       &::before {
         background: #a67ee5;
         border: none;
-        transition: .1s 1s background ease-in, .2s 0s border ease-in-out;
+        transition: background .2s .7s ease-in, width.3s ease-in-out, height .3s ease-in-out, border .2s .7s ease-in;
       }
 
       svg {
-        transition: .1s 1s filter ease-in;
+        transition: filter .2s .7s ease-in;
         filter: brightness(0) invert(1);
       }
     }
 
 
     .social-block__link {
-      opacity: 1;
-      transition: all .2s ease-in;
+      transition: color .1s ease-in;
       color: $c-light;
+      opacity: 1;
+
+
+      &--fb {
+        transition-delay: .15s;
+      }
+
+      &--insta {
+        transition-delay: .3s;
+      }
+
+      &--vk {
+        transition-delay: .45s;
+      }
     }
   }
 }
@@ -37,6 +49,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -55,7 +68,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: all .3s ease-in-out;
+    transition: width .3s ease-in-out, height .3s ease-in-out, background .2s .7s ease-in, border .2s .7s ease-in;
   }
 
   svg {
@@ -64,13 +77,14 @@
     width: 2.3rem;
     height: 2.2rem;
     filter: none;
+    transition: filter .2s .7s ease-in
   }
 
   &:hover {
     &::before {
       width: 112.5%;
       height: 112.5%;
-      transition: all .3s ease-in-out;
+      transition: width .3s ease-in-out, height .3s ease-in-out, background .2s .7s ease-in;
     }
   }
 
@@ -83,10 +97,8 @@
     }
 
     &+.social-block__list {
-      opacity: 1;
       pointer-events: auto;
     }
-
 
   }
 
@@ -115,7 +127,6 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -198,8 +209,8 @@
   color: transparent;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition-timing-function: ease-in-out;
-  transition-duration: .5s;
+
+
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -217,7 +228,7 @@
   }
 
   &:hover {
-    transition: color .1s ease-in;
+    transition: color .05s ease-in-out;
     color: $c-purple;
   }
 
@@ -241,7 +252,7 @@
 
 
   &--fb {
-    transition-delay: .15s;
+    transition-delay: .45s;
 
 
     svg {
@@ -270,7 +281,7 @@
   }
 
   &--vk {
-    transition-delay: .45s;
+    transition-delay: .15s;
 
     svg {
       width: 1.7rem;
