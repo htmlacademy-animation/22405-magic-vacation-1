@@ -1,27 +1,21 @@
 .social-block {
   position: relative;
 
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-    }
-  }
-
-
   &--active {
     .social-block__toggler {
       background: #a67ee5;
-      color: #fff;
-      transition: all .3s .1s ease-in-out;
+      // color: #fff;
+      transition: .1s 1s background ease-in;
+
 
       &::before {
         background: #a67ee5;
         border: none;
-        transition: all .2s .1s ease-in-out;
+        transition: .1s 1s background ease-in, .2s 0s border ease-in-out;
       }
 
       svg {
-        transition: all .3s .1s ease-in-out;
+        transition: .1s 1s filter ease-in;
         filter: brightness(0) invert(1);
       }
     }
@@ -29,7 +23,9 @@
 
     .social-block__link {
       opacity: 1;
-    } 
+      transition: all .2s ease-in;
+      color: $c-light;
+    }
   }
 }
 
@@ -70,16 +66,12 @@
     filter: none;
   }
 
-  &:hover,
-  .social-block--active & {
-    color: $c-purple;
-
+  &:hover {
     &::before {
       width: 112.5%;
       height: 112.5%;
+      transition: all .3s ease-in-out;
     }
-
-
   }
 
   &:focus {
@@ -106,6 +98,7 @@
       width: 100%;
       height: 100%;
       background-color: $c-purple;
+      transition: width .3s ease-in-out, height .3s ease-in-out;
       border-color: $c-purple;
     }
   }
@@ -165,8 +158,6 @@
   &:hover {
     opacity: 1;
     pointer-events: auto;
-
-
   }
 
   &:focus-within {
@@ -204,10 +195,11 @@
   opacity: 0;
   width: 4rem;
   height: 4rem;
-  color: $c-light;
+  color: transparent;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition: all .3s;
+  transition-timing-function: ease-in-out;
+  transition-duration: .5s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -225,6 +217,7 @@
   }
 
   &:hover {
+    transition: color .1s ease-in;
     color: $c-purple;
   }
 
@@ -248,8 +241,8 @@
 
 
   &--fb {
+    transition-delay: .15s;
 
-    transition-delay: 0;
 
     svg {
       width: 0.8rem;
@@ -263,8 +256,7 @@
   }
 
   &--insta {
-
-    transition-delay: .2s;
+    transition-delay: .3s;
 
     svg {
       width: 1.5rem;
@@ -278,8 +270,7 @@
   }
 
   &--vk {
-
-    transition-delay: .4s;
+    transition-delay: .45s;
 
     svg {
       width: 1.7rem;
