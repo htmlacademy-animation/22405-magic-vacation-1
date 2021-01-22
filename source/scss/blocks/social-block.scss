@@ -1,42 +1,10 @@
 .social-block {
   position: relative;
 
-  &--active {
-    .social-block__toggler {
-      background: #a67ee5;
-      transition: background .2s .7s ease-in;
-
-
-      &::before {
-        background: #a67ee5;
-        border: none;
-        transition: background .2s .7s ease-in, width.3s ease-in-out, height .3s ease-in-out, border .2s .7s ease-in;
-      }
-
-      svg {
-        transition: filter .2s .7s ease-in;
-        filter: brightness(0) invert(1);
-      }
-    }
-
-
-    .social-block__link {
-      transition: color .35s ease-in-out;
-      color: $c-light;
+  &:hover {
+    .social-block__list {
       opacity: 1;
-
-
-      &--fb {
-        transition-delay: .1s;
-      }
-
-      &--insta {
-        transition-delay: .2s;
-      }
-
-      &--vk {
-        transition-delay: .3s;
-      }
+      pointer-events: auto;
     }
   }
 }
@@ -49,7 +17,6 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -68,7 +35,6 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: width .3s ease-in-out, height .3s ease-in-out, background .2s .7s ease-in, border .2s .7s ease-in;
   }
 
   svg {
@@ -76,15 +42,15 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
-    filter: none;
-    transition: filter .2s .7s ease-in
   }
 
-  &:hover {
+  &:hover,
+  .social-block--active & {
+    color: $c-purple;
+
     &::before {
       width: 112.5%;
       height: 112.5%;
-      transition: width .3s ease-in-out, height .3s ease-in-out, background .2s .7s ease-in;
     }
   }
 
@@ -96,10 +62,10 @@
       border-color: $c-purple;
     }
 
-    &+.social-block__list {
+    & + .social-block__list {
+      opacity: 1;
       pointer-events: auto;
     }
-
   }
 
   &:active,
@@ -110,15 +76,9 @@
       width: 100%;
       height: 100%;
       background-color: $c-purple;
-      transition: width .3s ease-in-out, height .3s ease-in-out;
       border-color: $c-purple;
     }
   }
-
-
-
-
-
 }
 
 .social-block__list {
@@ -127,6 +87,7 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
+  opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -179,7 +140,6 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
-
   }
 
   li {
@@ -203,14 +163,11 @@
 .social-block__link {
   position: relative;
   display: block;
-  opacity: 0;
   width: 4rem;
   height: 4rem;
-  color: transparent;
+  color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
-
-
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -228,7 +185,6 @@
   }
 
   &:hover {
-    transition: color .05s ease-in-out;
     color: $c-purple;
   }
 
@@ -250,11 +206,7 @@
     @include center;
   }
 
-
   &--fb {
-    transition-delay: .2s;
-
-
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -267,10 +219,6 @@
   }
 
   &--insta {
-    // transition-delay: .3s;
-    transition-delay: .2s;
-
-
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -283,8 +231,6 @@
   }
 
   &--vk {
-    transition-delay: .2s;
-
     svg {
       width: 1.7rem;
       height: 1rem;
