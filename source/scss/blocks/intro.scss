@@ -93,8 +93,6 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
-  opacity: 0;
-  animation: 1s fadeIn 1s linear forwards, .5s slideInTop 1s linear both;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -163,29 +161,4 @@
     margin: 0 0 0 -5px;
     font-size: 48px;
   }
-}
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInTop {
-  from {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
 }
