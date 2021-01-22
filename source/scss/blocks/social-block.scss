@@ -21,21 +21,21 @@
 
 
     .social-block__link {
-      transition: color .1s ease-in;
+      transition: color .35s ease-in-out;
       color: $c-light;
       opacity: 1;
 
 
       &--fb {
-        transition-delay: .15s;
+        transition-delay: .1s;
       }
 
       &--insta {
-        transition-delay: .3s;
+        transition-delay: .2s;
       }
 
       &--vk {
-        transition-delay: .45s;
+        transition-delay: .3s;
       }
     }
   }
@@ -252,7 +252,7 @@
 
 
   &--fb {
-    transition-delay: .45s;
+    transition-delay: .2s;
 
 
     svg {
@@ -267,7 +267,9 @@
   }
 
   &--insta {
-    transition-delay: .3s;
+    // transition-delay: .3s;
+    transition-delay: .2s;
+
 
     svg {
       width: 1.5rem;
@@ -281,7 +283,7 @@
   }
 
   &--vk {
-    transition-delay: .15s;
+    transition-delay: .2s;
 
     svg {
       width: 1.7rem;
