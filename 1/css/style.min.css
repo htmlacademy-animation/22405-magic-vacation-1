@@ -1893,7 +1893,7 @@ img {
       background-color: #ffffff;
       display: block;
       opacity: 0;
-      left: 0;
+      right: 0;
       transition: all .3s; }
       @media (max-width: 1024px) and (orientation: portrait) {
         .page-header__menu a::after {
@@ -1911,6 +1911,8 @@ img {
       color: #a67ee5;
       outline: none; }
       .page-header__menu a:hover::after, .page-header__menu a:focus::after {
+        right: auto;
+        left: 0;
         opacity: 1;
         background-color: #a67ee5;
         width: 100%;
@@ -3152,15 +3154,15 @@ img {
       transition: filter .2s .7s ease-in;
       filter: brightness(0) invert(1); }
   .social-block--active .social-block__link {
-    transition: color .1s ease-in;
+    transition: color .35s ease-in-out;
     color: #ffffff;
     opacity: 1; }
     .social-block--active .social-block__link--fb {
-      transition-delay: .15s; }
+      transition-delay: .1s; }
     .social-block--active .social-block__link--insta {
-      transition-delay: .3s; }
+      transition-delay: .2s; }
     .social-block--active .social-block__link--vk {
-      transition-delay: .45s; }
+      transition-delay: .3s; }
 
 .social-block__toggler {
   padding: 0;
@@ -3327,7 +3329,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%); }
   .social-block__link--fb {
-    transition-delay: .45s; }
+    transition-delay: .2s; }
     .social-block__link--fb svg {
       width: 0.8rem;
       height: 1.7rem; }
@@ -3336,7 +3338,7 @@ img {
           width: 8px;
           height: 17px; } }
   .social-block__link--insta {
-    transition-delay: .3s; }
+    transition-delay: .2s; }
     .social-block__link--insta svg {
       width: 1.5rem;
       height: 1.5rem; }
@@ -3345,7 +3347,7 @@ img {
           width: 15px;
           height: 15px; } }
   .social-block__link--vk {
-    transition-delay: .15s; }
+    transition-delay: .2s; }
     .social-block__link--vk svg {
       width: 1.7rem;
       height: 1rem; }
