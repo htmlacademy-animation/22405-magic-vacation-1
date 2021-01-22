@@ -73,7 +73,7 @@
 
 .content-loaded {
   .screen__footer {
-   animation: slideInUp .1s linear;
+   animation: slideInUp .5s cubic-bezier(0.5, 0.8, 1, 1);
   }
 }
 
